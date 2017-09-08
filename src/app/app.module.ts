@@ -11,6 +11,9 @@ import { LoginPage } from '../pages/login/login';
 import { StationPage } from '../pages/station/station';
 import { TripPage } from '../pages/trip/trip';
 import { ReportPage } from '../pages/report/report';
+import { ConfirmPage } from '../pages/confirm/confirm';
+import { LogPage } from '../pages/log/log';
+import { SummaryPage } from '../pages/summary/summary';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +28,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     StationPage,
     TripPage,
-    ReportPage
+    ReportPage,
+    ConfirmPage,
+    LogPage,
+    SummaryPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     StationPage,
     TripPage,
-    ReportPage
+    ReportPage,
+    ConfirmPage,
+    LogPage,
+    SummaryPage
   ],
   providers: [
     StatusBar,

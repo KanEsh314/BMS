@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the StationPage page.
@@ -22,4 +23,7 @@ export class StationPage {
     console.log('ionViewDidLoad StationPage');
   }
 
+  getCancel(){
+  	this.navCtrl.push(HomePage);
+  }
 }

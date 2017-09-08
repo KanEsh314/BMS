@@ -13,6 +13,39 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+<ion-grid>
+	<ion-row>
+		<ion-item>
+      		<ion-label>ROUTE</ion-label>
+      			<ion-select [(ngModel)]="route">
+        			<ion-option value="r1">Alor Setar</ion-option>
+        			<ion-option value="r2">Bukit Kayu Hitam</ion-option>
+        			<ion-option value="r3">Butterworth</ion-option>
+        			<ion-option value="r4">Ipoh</ion-option>
+       				<ion-option value="r5">Kota Tinggi</ion-option>
+        			<ion-option value="r6">Kuala Lumpur</ion-option>
+      			</ion-select>
+    	</ion-item>
+	</ion-row>
+	<ion-row>
+		<ion-card-header>
+    		16 Trips
+  		</ion-card-header>
 
+  		<ion-card-content>
+    		<ion-row>
+    			<ion-col>
+      				500 Adult
+    			</ion-col>
+    			<ion-col>
+      				204 Child
+    			</ion-col>
+    			<ion-col>
+      				Rm2560
+    			</ion-col>
+  			</ion-row>
+  		</ion-card-content>
+	</ion-row>
+</ion-grid>
 </ion-content>

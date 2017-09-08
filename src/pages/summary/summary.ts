@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ConfirmPage } from '../confirm/confirm';
-import { HomePage } from '../home/home';
+
 /**
- * Generated class for the TripPage page.
+ * Generated class for the SummaryPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
@@ -11,25 +10,16 @@ import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
-  selector: 'page-trip',
-  templateUrl: 'trip.html',
+  selector: 'page-summary',
+  templateUrl: 'summary.html',
 })
-export class TripPage {
+export class SummaryPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TripPage');
-  }
-
-  getConfirm(){
-  	this.navCtrl.push(ConfirmPage);
-  }
-
-  getCancel(){
-    this.navCtrl.push(HomePage);
+    console.log('ionViewDidLoad SummaryPage');
   }
 
 }

@@ -1,11 +1,37 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+    	Report
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+	<ion-grid>
+		<ion-row>
+      		<ion-list-header>
+  					ON-GOING-TRIPS
+			</ion-list-header>
+  		</ion-row>  		
+  		<ion-item-divider>
 
+  		</ion-item-divider>
+  		<ion-row>
+  			<div>
+  				<h5>Welcome</h5>
+  			</div>
+  		</ion-row>
+
+  			<ion-list>
+    			<button ion-item (click)="getSummary()">
+      				<ion-icon name="bus" item-start></ion-icon>
+      					SBN-KL KCK 6655
+    			</button>
+
+    			<button ion-item>
+      				<ion-icon name="bus" item-start></ion-icon>
+      					SBN-KL KCK 6655
+    			</button>
+    		</ion-list>
+	</ion-grid>
 </ion-content>
