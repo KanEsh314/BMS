@@ -14,6 +14,7 @@ import { ReportPage } from '../pages/report/report';
 import { ConfirmPage } from '../pages/confirm/confirm';
 import { LogPage } from '../pages/log/log';
 import { SummaryPage } from '../pages/summary/summary';
+import { RegisterPage } from '../pages/register/register';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,7 +32,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ReportPage,
     ConfirmPage,
     LogPage,
-    SummaryPage
+    SummaryPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ReportPage,
     ConfirmPage,
     LogPage,
-    SummaryPage
+    SummaryPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,

@@ -28,24 +28,29 @@
       			</ion-select>
     	</ion-item>
 	</ion-row>
-	<ion-row>
-		<ion-card-header>
-    		16 Trips
-  		</ion-card-header>
+	</ion-grid>
 
+  <ion-card>
   		<ion-card-content>
-    		<ion-row>
-    			<ion-col>
-      				500 Adult
-    			</ion-col>
-    			<ion-col>
-      				204 Child
-    			</ion-col>
-    			<ion-col>
-      				Rm2560
-    			</ion-col>
-  			</ion-row>
+      <ion-row>
+        <ion-col col-md-3>
+          16 Trip
+        </ion-col>
+        <ion-col col-md-6>
+          <ion-row>
+            Adult : 32
+          </ion-row>
+          <ion-row>
+            Child :12
+          </ion-row>
+        </ion-col>
+        <ion-col col-md-3 offset-md-3>
+          RM 2,650
+        </ion-col>
+      </ion-row>
   		</ion-card-content>
-	</ion-row>
-</ion-grid>
+  </ion-card>
+
+  <button ion-button color="secondary" full (click)="getBack()">Back</button>
+
 </ion-content>

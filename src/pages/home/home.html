@@ -5,20 +5,32 @@
   </ion-header>
 
 <ion-content>
-<ion-grid class="style">
-  <ion-row>
-    <div>
-      <h3>Welcome To TripMaster</h3>
-    </div>
-  </ion-row>
-  <ion-row>
-    <button ion-button color="secondary" (click)="setStation()">Set Station</button>
-  </ion-row>
-  <ion-row>
-    <button ion-button color="secondary" (click)="createTrip()">Create Trip</button>
-  </ion-row>
-  <ion-row>
-    <button ion-button color="secondary" (click)="todayReport()">Today's Report</button>
-  </ion-row>
-</ion-grid>
+  <ion-card class="cardstyle">
+
+    <ion-card-header>
+      <h1>Welcome</h1>
+    </ion-card-header>
+
+    <ion-list (click)="setStation()">
+      <button ion-item>
+      <ion-icon name="assest/station.png" item-start></ion-icon>
+        Set Station
+      </button>
+    </ion-list>
+
+    <ion-list (click)="createTrip()">
+      <button ion-item> 
+      <ion-icon name="assest/trip.png" item-start></ion-icon>
+        Create Trip     
+      </button>
+    </ion-list>
+
+    <ion-list (click)="todayReport()">
+      <button ion-item>
+      <ion-icon name="assest/report.png" item-start></ion-icon>
+        Today's Report
+      </button>
+    </ion-list>
+  </ion-card>
+
 </ion-content>

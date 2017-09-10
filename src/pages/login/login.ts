@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 
 /**
@@ -16,12 +16,35 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   routeHome(){
   	this.navCtrl.push(TabsPage);
   }
+
+  getRegister(){
+    let prompt = this.alertCtrl.create({
+      title: 'Complete action using',
+      message: '',
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Just once',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
