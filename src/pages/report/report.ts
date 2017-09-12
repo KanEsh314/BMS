@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ReportPage page.
@@ -24,7 +23,7 @@ export class ReportPage {
   }
 
   getBack(){
-  	this.navCtrl.push(HomePage);
+  	this.navCtrl.pop();
   }
 
 }

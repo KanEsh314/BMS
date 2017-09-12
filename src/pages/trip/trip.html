@@ -67,10 +67,10 @@
     </ion-list-header>
     <ion-row>
       <ion-col>
-        <button ion-button color="secondary">Start Sequence</button>
+        <button ion-button>Start Sequence</button>
       </ion-col>
       <ion-col>
-        <button ion-button color="secondary">End Sequence</button>
+        <button ion-button>End Sequence</button>
       </ion-col>
     </ion-row>
     <ion-item-divider>
@@ -81,18 +81,18 @@
     </ion-list-header>
     <ion-row>
       <ion-col>
-        <button ion-button color="secondary">Start Sequence</button>
+        <button ion-button>Start Sequence</button>
       </ion-col>
       <ion-col>
-        <button ion-button color="secondary">End Sequence</button>
+        <button ion-button>End Sequence</button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col align="right">
-        <button ion-button color="secondary" (click)="getConfirm()">Confirm</button>
+        <button ion-button color="but" (click)="getCancel()" round full>Cancel</button>
       </ion-col>
       <ion-col>
-        <button ion-button color="secondary" (click)="getCancel()">Cancel</button>
+        <button ion-button color="but" (click)="getConfirm()" round full>Confirm</button>
       </ion-col>
     </ion-row>
 	</ion-grid>

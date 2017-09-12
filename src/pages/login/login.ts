@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController} from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 
 /**
@@ -16,11 +16,16 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public loadCtrl: LoadingController
+    ) {
   }
 
-  routeHome(){
+  getHome(){
   	this.navCtrl.push(TabsPage);
+    this.loadCtrl.create({
+      duration: 5000,
+      dismissOnPageChange: true
+    }).present();
   }
 
   getRegister(){

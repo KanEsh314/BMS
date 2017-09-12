@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
 
 /**
  * Generated class for the StationPage page.
@@ -24,6 +23,6 @@ export class StationPage {
   }
 
   getCancel(){
-  	this.navCtrl.push(HomePage);
+  	this.navCtrl.pop();
   }
 }

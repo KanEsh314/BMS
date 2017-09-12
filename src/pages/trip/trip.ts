@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ConfirmPage } from '../confirm/confirm';
-import { HomePage } from '../home/home';
 /**
  * Generated class for the TripPage page.
  *
@@ -29,7 +28,7 @@ export class TripPage {
   }
 
   getCancel(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.pop();
   }
 
 }
