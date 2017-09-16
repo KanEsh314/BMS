@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController , NavParams , ModalController } from 'ionic-angular';
 import { StationPage } from '../station/station';
 import { TripPage } from '../trip/trip';
 import { ReportPage } from '../report/report';
@@ -10,12 +10,14 @@ import { ReportPage } from '../report/report';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  Email = this.navParams.get('Email');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams , public modalCtrl: ModalController) {
 
   }
 
   setStation(){
-  	this.navCtrl.push(StationPage);
+    this.navCtrl.push(StationPage);
   }
 
   createTrip(){
@@ -25,4 +27,9 @@ export class HomePage {
   todayReport(){
   	this.navCtrl.push(ReportPage);
   }
+
+  ionViewDidLoad(){
+    console.log(this.Email);
+  }
+
 }

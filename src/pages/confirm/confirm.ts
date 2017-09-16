@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { TripPage } from '../trip/trip';
 
@@ -17,7 +17,15 @@ import { TripPage } from '../trip/trip';
 })
 export class ConfirmPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    Route = this.navParams.get('Route');
+    Bus = this.navParams.get('Bus');
+    Time = this.navParams.get('Time');
+    AStart = this.navParams.get('AStart');
+    AEnd = this.navParams.get('AEnd');
+    CStart = this.navParams.get('CStart');
+    CEnd = this.navParams.get('CEnd');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams , public toastCtrl: ToastController) {
 
   }
 
@@ -26,11 +34,17 @@ export class ConfirmPage {
   }
 
   getConfirm(){
+    this.toastCtrl.create({
+      message: 'Your files were successfully saved',
+      showCloseButton: true,
+      closeButtonText: 'Ok'
+    }).present();
+
   	this.navCtrl.push(HomePage);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ConfirmPage');
+    console.log();
   }
 
 }

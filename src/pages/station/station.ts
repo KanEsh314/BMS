@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the StationPage page.
@@ -15,6 +16,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class StationPage {
 
+  station = '';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -24,5 +27,12 @@ export class StationPage {
 
   getCancel(){
   	this.navCtrl.pop();
+  }
+
+  getConfirm(){
+
+    this.navCtrl.push(HomePage,{
+      Station : this.station
+    });
   }
 }

@@ -15,6 +15,14 @@ import { ConfirmPage } from '../confirm/confirm';
 })
 export class TripPage {
 
+route = '';
+busno = '';
+timeStarts = new Date().toISOString();
+astart = '';
+aend = '';
+cstart = '';
+cend = '';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
@@ -24,7 +32,19 @@ export class TripPage {
   }
 
   getConfirm(){
-  	this.navCtrl.push(ConfirmPage);
+
+    let confirmData = {
+      Route : this.route,
+      Bus : this.busno,
+      Time : this.timeStarts,
+      AStart : this.astart,
+      AEnd : this.aend,
+      CStart : this.cstart,
+      CEnd : this.cend,
+    }
+
+
+  	this.navCtrl.push(ConfirmPage,confirmData);
   }
 
   getCancel(){

@@ -13,17 +13,17 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="style">
 	<ion-list-header>
   		Trip Summary
 	</ion-list-header>
-	<ion-grid class="style">
+	<ion-grid>
 	<ion-row>
 		<ion-col>
 			Route : 
 		</ion-col>
 		<ion-col>
-			Seremban
+			{{Route}}
 		</ion-col>
 	</ion-row>
 	<ion-row>
@@ -31,7 +31,7 @@
 			Bus No :
 		</ion-col>
 		<ion-col>
-			KCK 6666
+			{{Bus}}
 		</ion-col>
 	</ion-row>
 	<ion-row>
@@ -39,7 +39,7 @@
 			Departure Time :
 		</ion-col>
 		<ion-col>
-			6:00a.m.
+			{{Time}}
 		</ion-col>
 	</ion-row>
 	<ion-row>

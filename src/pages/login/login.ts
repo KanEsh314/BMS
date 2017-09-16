@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, LoadingController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+
 
 /**
  * Generated class for the LoginPage page.
@@ -16,38 +17,37 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
+  email = '';
+  password = '';
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public loadCtrl: LoadingController
     ) {
+    
   }
 
   getHome(){
-  	this.navCtrl.push(TabsPage);
-    this.loadCtrl.create({
-      duration: 5000,
-      dismissOnPageChange: true
-    }).present();
-  }
 
-  getRegister(){
-    let prompt = this.alertCtrl.create({
-      title: 'Complete action using',
-      message: '',
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Just once',
-          handler: data => {
-            console.log('Saved clicked');
-          }
-        }
-      ]
+    if(this.email == 'User' && this.password == '123456us' || this.email == 'Inspector' && this.password == '123456in' || this.email == 'Driver' && this.password == '123456dr'){
+
+      this.loadCtrl.create({
+        duration: 5000,
+        dismissOnPageChange: true
+      }).present();
+
+      this.navCtrl.setRoot(TabsPage,{
+        Email: this.email,
+        Password: this.password
+      })
+    }
+    else{
+      let alert = this.alertCtrl.create({
+      title: 'Login Failed',
+      message: 'Did you enter the right credentials?',
+      buttons: ['Ok'],
+      cssClass: 'alertDanger'
     });
-    prompt.present();
+    alert.present()
+    }
   }
   
   ionViewDidLoad() {

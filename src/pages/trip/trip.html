@@ -18,12 +18,11 @@
 				<ion-item>
       				<ion-label>ROUTE</ion-label>
       				<ion-select [(ngModel)]="route">
-        				<ion-option value="r1">Alor Setar</ion-option>
-        				<ion-option value="r2">Bukit Kayu Hitam</ion-option>
-        				<ion-option value="r3">Butterworth</ion-option>
-        				<ion-option value="r4">Ipoh</ion-option>
-        				<ion-option value="r5">Kota Tinggi</ion-option>
-        				<ion-option value="r6">Kuala Lumpur</ion-option>
+        				<ion-option value="SBN - MLK">SBN - MLK</ion-option>
+        				<ion-option value="SBN - MUR">SBN - MUR</ion-option>
+        				<ion-option value="SBN - BP">SBN - BP</ion-option>
+        				<ion-option value="SBN - KLI2">SBN - KLI2</ion-option>
+        				<ion-option value="SBN - KUA">SBN - KUA</ion-option>
       				</ion-select>
     			</ion-item>
 		</ion-row>
@@ -34,12 +33,12 @@
 				<ion-item>
       				<ion-label>BUS NO</ion-label>
       				<ion-select [(ngModel)]="busno">
-        				<ion-option value="bn1">ABC 1234</ion-option>
-        				<ion-option value="bn2">DEF 1234</ion-option>
-        				<ion-option value="bn3">GHI 1234</ion-option>
-        				<ion-option value="bn4">JKL 1234</ion-option>
-        				<ion-option value="bn5">MNO 1234</ion-option>
-        				<ion-option value="b66">PQR 1234</ion-option>
+        				<ion-option value="ABC 1234">ABC 1234</ion-option>
+        				<ion-option value="DEF 1234">DEF 1234</ion-option>
+        				<ion-option value="GHI 1234">GHI 1234</ion-option>
+        				<ion-option value="JKL 1234">JKL 1234</ion-option>
+        				<ion-option value="MNO 1234">MNO 1234</ion-option>
+        				<ion-option value="PQR 1234">PQR 1234</ion-option>
       				</ion-select>
     			</ion-item>
 		</ion-row>
@@ -47,44 +46,39 @@
     
     </ion-item-divider>
 		<ion-row>
-				<ion-item>
-      				<ion-label>SCHEDULE TIME</ion-label>
-      				<ion-select [(ngModel)]="schtime">
-        				<ion-option value="st1">1330</ion-option>
-        				<ion-option value="st2">2245</ion-option>
-        				<ion-option value="st3">0630</ion-option>
-        				<ion-option value="st4">1015</ion-option>
-        				<ion-option value="st5">1200</ion-option>
-        				<ion-option value="st6">1600</ion-option>
-      				</ion-select>
-    			</ion-item>
+      <ion-item>
+      <ion-label>START TIME</ion-label>
+        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="timeStarts"></ion-datetime>
+    </ion-item>
 		</ion-row>
-    <ion-item-divider>
-      
-    </ion-item-divider>
     <ion-list-header text-center>
       Adult
     </ion-list-header>
     <ion-row>
       <ion-col>
-        <button ion-button>Start Sequence</button>
+        <ion-item>
+          <ion-input placeholder="START SEQUENCE" [(ngModel)]="astart"></ion-input>
+        </ion-item>
       </ion-col>
       <ion-col>
-        <button ion-button>End Sequence</button>
+        <ion-item>  
+          <ion-input placeholder="END SEQUENCE" [(ngModel)]="aend"></ion-input>
+        </ion-item>
       </ion-col>
     </ion-row>
-    <ion-item-divider>
-      
-    </ion-item-divider>
     <ion-list-header text-center>
       Child
     </ion-list-header>
     <ion-row>
       <ion-col>
-        <button ion-button>Start Sequence</button>
+        <ion-item>
+          <ion-input placeholder="START SEQUENCE" [(ngModel)]="cstart"></ion-input>
+        </ion-item>
       </ion-col>
       <ion-col>
-        <button ion-button>End Sequence</button>
+        <ion-item>  
+          <ion-input placeholder="END SEQUENCE" [(ngModel)]="cend"></ion-input>
+        </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>

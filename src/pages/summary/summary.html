@@ -14,5 +14,18 @@
 
 
 <ion-content padding>
-
+	<ion-list>
+    <ion-item>
+      <ion-label color="primary">INCIDENT REPORT</ion-label>
+      <ion-textarea placeholder="Text Input"></ion-textarea>
+  	</ion-item>
+	</ion-list>
+  	<ion-row>
+      <ion-col align="right">
+        <button ion-button color="but" (click)="getCancel()" round full>Cancel</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="but" (click)="getReport()" round full>Confirm</button>
+      </ion-col>
+  	</ion-row>
 </ion-content>

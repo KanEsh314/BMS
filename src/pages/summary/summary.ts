@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams , ToastController} from 'ionic-angular';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the SummaryPage page.
  *
@@ -15,7 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SummaryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams , 	public toastCtrl: ToastController) {
+  }
+
+  getReport(){
+  	this.toastCtrl.create({
+      message: 'Your report were successfully submited',
+      showCloseButton: true,
+      closeButtonText: 'Ok'
+    }).present();
+
+  	this.navCtrl.push(HomePage);
+  }
+
+  getCancel(){
+  	this.navCtrl.pop();
   }
 
   ionViewDidLoad() {
