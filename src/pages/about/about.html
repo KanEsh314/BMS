@@ -1,38 +1,26 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-    	Report
-    </ion-title>
+<ion-navbar hideBackButton="true" color="nav">
+    <ion-title>BMS</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="Authentication()">
+            <ion-icon name="contact"></ion-icon>
+          </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="style">
-	<ion-grid>
-		<ion-row>
-      		<ion-list-header>
-            <h2>WELCOME TRIP INSPECTOR</h2>
-  					<h2>ON-GOING-TRIPS</h2>
-			    </ion-list-header>
-  		</ion-row>  		
-  		<ion-item-divider>
+<ion-content class="styleIns">
 
-  		</ion-item-divider>
-  		<ion-row>
-  			<div>
-  				<h5>Welcome</h5>
-  			</div>
-  		</ion-row>
+  <ion-list-header>
+    <h1>WELCOME {{Email}}</h1>
+  	<h1>ON-GOING-TRIPS</h1>
+	</ion-list-header>
 
-  			<ion-list>
-    			<button ion-item (click)="getSummary()">
-      				<ion-icon name="bus" item-start></ion-icon>
-      					SBN-KL KCK 6655
-    			</button>
-
-    			<button ion-item>
-      				<ion-icon name="bus" item-start></ion-icon>
-      					SBN-KL KCK 6655
-    			</button>
-    		</ion-list>
-	</ion-grid>
+  <ion-item (click)="getSummary()">
+    <ion-avatar item-start>
+        <ion-icon name="bus" item-start></ion-icon>
+    </ion-avatar>
+        <h2>SBN-KL KCK 6655</h2>
+  </ion-item>
+  
 </ion-content>

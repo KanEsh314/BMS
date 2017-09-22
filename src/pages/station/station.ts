@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { IonicPage, NavController, NavParams , ViewController} from 'ionic-angular';
 
 /**
  * Generated class for the StationPage page.
@@ -18,21 +17,19 @@ export class StationPage {
 
   station = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams , public viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StationPage');
   }
 
-  getCancel(){
-  	this.navCtrl.pop();
-  }
-
   getConfirm(){
 
-    this.navCtrl.push(HomePage,{
+    let stationData = {
       Station : this.station
-    });
+    }
+
+    this.viewCtrl.dismiss(stationData);
   }
 }

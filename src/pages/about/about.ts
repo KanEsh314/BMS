@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController , NavParams} from 'ionic-angular';
 import { LogPage } from '../log/log';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-about',
@@ -8,12 +9,18 @@ import { LogPage } from '../log/log';
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController) {
+  Email = this.navParams.get('Email');
+
+  constructor(public navCtrl: NavController , public navParams: NavParams) {
 
   }
 
   getSummary(){
   	this.navCtrl.push(LogPage);
+  }
+
+  Authentication(){
+    this.navCtrl.pop(LoginPage);
   }
 
 }

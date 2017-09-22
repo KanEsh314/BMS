@@ -27,4 +27,8 @@ export class LogPage {
   	this.navCtrl.push(SummaryPage);
   }
 
+  getCancel(){
+    this.navCtrl.pop();
+  }
+
 }

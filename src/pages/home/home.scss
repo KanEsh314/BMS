@@ -1,9 +1,21 @@
 .cardstyle ion-list{
-	height: 100%;
-	display: inline;
+	max-height: 200%;
 }
 
-.cardstyle ion-list-header{
+.cardstyle h1{
 	font-size: 2rem;
 	font-weight: bold;
+	text-align: center;
+}
+
+.cardstyle ion-item{
+	height: 80px;
+}
+
+ion-avatar{
+	text-align: center;
+}
+
+ion-avatar img{
+	margin: auto;
 }

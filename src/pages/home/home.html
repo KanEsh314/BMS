@@ -1,37 +1,47 @@
 <ion-header>
-  <ion-navbar>
-
-  </ion-navbar >
+<ion-navbar hideBackButton="true" color="nav">
+    <ion-title>BMS</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="Authentication()">
+            <ion-icon name="contact"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
   </ion-header>
 
-<ion-content>
-  <ion-card class="cardstyle">
+<ion-content class="cardstyle">
+    
+    <ion-list>
 
-    <ion-card-header>
-      <h2>WELCOME TRIP MASTER</h2>
-      <h2>YOUR CURRENT DESTINATION IS </h2>
-    </ion-card-header>
+    <ion-list-header>
+      <div>
+        <h1>WELCOME {{Email}}</h1>
+        <ion-avatar item-start><img src="assets/locate.png">{{Sta.Station}}</ion-avatar>
+      </div>
+    </ion-list-header>
 
-    <ion-list (click)="setStation()">
-      <button ion-item>
-      <ion-icon name="assest/station.png" item-start></ion-icon>
-        Set Station
-      </button>
-    </ion-list>
+    <ion-item (click)="setStation()">
+      <ion-avatar item-start>
+        <img src="assets/station.png">
+      </ion-avatar>
+        <h2>Set Station</h2>
+    </ion-item>
 
-    <ion-list (click)="createTrip()">
-      <button ion-item> 
-      <ion-icon name="assest/trip.png" item-start></ion-icon>
-        Create Trip     
-      </button>
-    </ion-list>
+    <ion-item (click)="createTrip()">
+      <ion-avatar item-start>
+        <img src="assets/trip.png">
+      </ion-avatar>
+        <h2>Create Trip</h2>
+    </ion-item>
 
-    <ion-list (click)="todayReport()">
-      <button ion-item>
-      <ion-icon name="assest/report.png" item-start></ion-icon>
-        Today's Report
-      </button>
-    </ion-list>
-  </ion-card>
+
+    <ion-item (click)="todayReport()">
+      <ion-avatar item-start>
+        <img src="assets/report.png">
+      </ion-avatar>
+        <h2>Today's Report</h2>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>

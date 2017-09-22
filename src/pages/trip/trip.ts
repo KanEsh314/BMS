@@ -17,7 +17,7 @@ export class TripPage {
 
 route = '';
 busno = '';
-timeStarts = new Date().toISOString();
+timeStarts = new Date().getTime();
 astart = '';
 aend = '';
 cstart = '';

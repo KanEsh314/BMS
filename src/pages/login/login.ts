@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
-import { TabsPage } from '../tabs/tabs';
-
+//import { TabsPage } from '../tabs/tabs';
+import { HomePage } from '../home/home';
+import { AboutPage } from '../about/about';
+import { ContactPage } from '../contact/contact'
 
 /**
  * Generated class for the LoginPage page.
@@ -26,18 +28,39 @@ export class LoginPage {
   }
 
   getHome(){
+    //|| this.email == 'Inspector' && this.password == '123456in' || this.email == 'Driver' && this.password == '123456dr'
 
-    if(this.email == 'User' && this.password == '123456us' || this.email == 'Inspector' && this.password == '123456in' || this.email == 'Driver' && this.password == '123456dr'){
+    let loginData = {
+      Email: this.email,
+      Password: this.password
+    };
+
+    if(this.email == 'User' && this.password == '123456us'){
 
       this.loadCtrl.create({
         duration: 5000,
         dismissOnPageChange: true
       }).present();
 
-      this.navCtrl.setRoot(TabsPage,{
-        Email: this.email,
-        Password: this.password
-      })
+      this.navCtrl.push(HomePage,loginData)
+    }
+    else if(this.email == 'Inspector' && this.password == '123456in'){
+
+      this.loadCtrl.create({
+        duration: 5000,
+        dismissOnPageChange: true
+      }).present();
+
+      this.navCtrl.push(AboutPage,loginData);
+    }
+    else if(this.email == 'Driver' && this.password == '123456dr'){
+
+      this.loadCtrl.create({
+        duration: 5000,
+        dismissOnPageChange: true
+      }).present();
+
+      this.navCtrl.push(ContactPage,loginData);
     }
     else{
       let alert = this.alertCtrl.create({

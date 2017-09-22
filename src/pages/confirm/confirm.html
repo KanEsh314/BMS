@@ -6,58 +6,45 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Confirm</ion-title>
+  <ion-navbar color="nav">
+    <ion-title>TRIP SUMMARY</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="style">
-	<ion-list-header>
-  		Trip Summary
-	</ion-list-header>
-	<ion-grid>
-	<ion-row>
-		<ion-col>
-			Route : 
-		</ion-col>
-		<ion-col>
-			{{Route}}
-		</ion-col>
-	</ion-row>
-	<ion-row>
-		<ion-col>
-			Bus No :
-		</ion-col>
-		<ion-col>
-			{{Bus}}
-		</ion-col>
-	</ion-row>
-	<ion-row>
-		<ion-col>
-			Departure Time :
-		</ion-col>
-		<ion-col>
-			{{Time}}
-		</ion-col>
-	</ion-row>
-	<ion-row>
-		<ion-col>
-			Child : 12
-		</ion-col>
-		<ion-col>
-			Adult : 32
-		</ion-col>
-	</ion-row>
-	<ion-row>
-		<ion-col>
-			Total : 44
-		</ion-col>
-		<ion-col>
-			Total : RM 296
-		</ion-col>
-	</ion-row>
+<ion-content class="styleTrip">
+	
+	<ion-item>
+		<ion-label class="bold">ROUTE</ion-label>
+		<ion-label>{{Route}}</ion-label>
+	</ion-item>
+
+	<ion-item>
+		<ion-label class="bold">BUS NO</ion-label>
+		<ion-label>{{Bus}}</ion-label>
+	</ion-item>
+
+	<ion-item>
+		<ion-label class="bold">DEPARTURE TIME</ion-label>
+		<ion-label>{{Time}}</ion-label>
+	</ion-item>
+
+	<ion-item>
+		<ion-label class="bold">ADULT</ion-label>
+		<ion-label>44</ion-label>
+	</ion-item>
+
+	<ion-item>
+		<ion-label class="bold">CHILD</ion-label>
+		<ion-label>12</ion-label>
+	</ion-item>
+
+	<ion-item>
+		<ion-label class="bold">TOTAL</ion-label>
+		<ion-label>RM296.00</ion-label>
+	</ion-item>
+
 	<ion-row>
 		<ion-col>
 			<button ion-button color="but" (click)="getEdit()" round full>Edit</button>
@@ -66,5 +53,5 @@
 			<button ion-button color="but" (click)="getConfirm()" round full>Confirm</button>
 		</ion-col>
 	</ion-row>
-	</ion-grid>
+
 </ion-content>

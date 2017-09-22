@@ -6,28 +6,35 @@
 -->
 <ion-header>
 
-  <ion-navbar hideBackButton="true">
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
 </ion-header>
 
 
-<ion-content>
-<img src="assets/bgImg.jpg">
-<div class="cenLog">
-	<ion-list>
-    	<ion-item>
-      		<ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
-    	</ion-item>
+<ion-content class="bgScroll">
+  <ion-card class="colorCard">
+    <ion-item>
+    <ion-avatar>
+      <img src="assets/iconic.jpg">
+    </ion-avatar>
+    </ion-item>
 
-    	<ion-item>
-      		<ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
-    	</ion-item>
-  	</ion-list>
+      <ion-card-content>
+        <ion-list no-lines>
+          
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input [(ngModel)]="email"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input [(ngModel)]="password" type="password"></ion-input>
+          </ion-item>
+        
+        </ion-list>
+      </ion-card-content>
 
-  <div>
-  	<button ion-button color="but" (click)="getHome()" round full>Log In</button>
-  </div>
-</div>
+  </ion-card>
+
+<button class="ButtonLog" ion-button icon-right color="but" (click)="getHome()"> Next <ion-icon name="arrow-forward"></ion-icon></button>
+
 </ion-content>

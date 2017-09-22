@@ -6,41 +6,31 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title></ion-title>
+  <ion-navbar color="nav">
+    <ion-title>SET STATION</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content>
+<ion-content class="style">
 
-<ion-grid class="style">
-	<ion-row>
-		<div>
-			<h3>Set Station</h3>
-		</div>
-	</ion-row>
 	<ion-row>
 		<ion-item>
       		<ion-label>Station</ion-label>
       			<ion-select [(ngModel)]="station">
-        			<ion-option value="a">Tampin</ion-option>
-        			<ion-option value="b">Seremban</ion-option>
-        			<ion-option value="c">Rembau</ion-option>
-        			<ion-option value="d">Port Dickson</ion-option>
-        			<ion-option value="e">Nilai</ion-option>
-        			<ion-option value="f">Lukut</ion-option>
+        			<ion-option value="Tampin">Tampin</ion-option>
+        			<ion-option value="Seremban">Seremban</ion-option>
+        			<ion-option value="Rembau">Rembau</ion-option>
+        			<ion-option value="Port Dickson">Port Dickson</ion-option>
+        			<ion-option value="Nilai">Nilai</ion-option>
+        			<ion-option value="Lukut">Lukut</ion-option>
       			</ion-select>
     	</ion-item>
 	</ion-row>
 	<ion-row>
-		<ion-col align="right">
-			<button ion-button color="but" (click)="getCancel()" round full>Cancel</button>
-		</ion-col>
 		<ion-col>
 			<button ion-button color="but" (click)="getConfirm()" round full>Confirm</button>
 		</ion-col>
 	</ion-row>
-</ion-grid>
 
 </ion-content>

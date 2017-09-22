@@ -6,17 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Report</ion-title>
+  <ion-navbar color="nav">
+    <ion-title>TODAY'S REPORT</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content>
-<ion-grid>
-	<ion-row>
-		<ion-item>
+<ion-content class="cardReport">
+		
+    <ion-item>
       		<ion-label>ROUTE</ion-label>
       			<ion-select [(ngModel)]="route">
         			<ion-option value="r1">Alor Setar</ion-option>
@@ -26,17 +25,40 @@
        				<ion-option value="r5">Kota Tinggi</ion-option>
         			<ion-option value="r6">Kuala Lumpur</ion-option>
       			</ion-select>
-    	</ion-item>
-	</ion-row>
-	</ion-grid>
+    </ion-item>
 
-  <ion-card>
-    <img src="assets/cardBus.jpg"/>
-    <div class="card-title">16 Trip</div>
-    <div class="card-subtitle">ADULT 16 || CHILD 4</div>
-    <div class="card-sale">RM 2,560</div>
-  </ion-card>
+    <div class="cards">
+      <ion-item color="item1" no-lines>
+        <ion-avatar item-start>
+          <img src="assets/card.png">
+        </ion-avatar>
+          <ion-label start>TRIP</ion-label>
+          <ion-label end>16</ion-label>
+      </ion-item>
 
-  <button ion-button color="but" (click)="getBack()" round full>Back</button>
+      <ion-item color="item2" no-lines>
+        <ion-avatar item-start>
+          <img src="assets/card.png">
+        </ion-avatar>
+          <ion-label start>ADULT</ion-label>
+          <ion-label end>22</ion-label>
+      </ion-item>
+
+      <ion-item color="item3" no-lines>
+        <ion-avatar item-start>
+          <img src="assets/card.png">
+        </ion-avatar>
+          <ion-label start>CHILD</ion-label>
+          <ion-label end>11</ion-label>
+      </ion-item>
+
+      <ion-item color="item4" no-lines>
+        <ion-avatar item-start>
+          <img src="assets/card.png">
+        </ion-avatar>
+          <ion-label start>SALES</ion-label>
+          <ion-label end>RM2,560</ion-label>
+      </ion-item>
+    </div>
 
 </ion-content>
