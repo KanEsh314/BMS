@@ -4,6 +4,7 @@ import { StationPage } from '../station/station';
 import { TripPage } from '../trip/trip';
 import { ReportPage } from '../report/report';
 import { LoginPage } from '../login/login';
+import { AuthProvider } from '../../providers/auth/auth';
 
 @Component({
   selector: 'page-home',
@@ -11,10 +12,10 @@ import { LoginPage } from '../login/login';
 })
 export class HomePage {
 
-  Email = this.navParams.get('Email');
+  Email = this.navParams.get('email');
   Sta = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams , public modalCtrl: ModalController, public authService: AuthProvider) {
 
   }
 
@@ -35,7 +36,8 @@ export class HomePage {
   }
 
   Authentication(){
-    this.navCtrl.pop(LoginPage);
+    //this.authService.logout();
+    this.navCtrl.setRoot(LoginPage);
   }
 
   ionViewDidLoad(){

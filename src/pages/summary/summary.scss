@@ -1,8 +1,8 @@
 .styleButton button {
 	position: absolute;
-	bottom: 20%;
 }
-
-.ion-textarea{
-	height: 60vh; 
+ion-textarea{
+	width: 100% !important;
+	height: 60vh !important;
+	overflow: hidden;
 }

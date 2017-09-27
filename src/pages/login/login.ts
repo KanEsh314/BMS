@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
-//import { TabsPage } from '../tabs/tabs';
+import { AuthProvider } from '../../providers/auth/auth';
 import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact'
-
 /**
  * Generated class for the LoginPage page.
  *
@@ -22,27 +21,45 @@ export class LoginPage {
   email = '';
   password = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public loadCtrl: LoadingController
-    ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public loadCtrl: LoadingController, public authService: AuthProvider){
     
+  }
+
+  showLoading(){
+    this.loadCtrl.create({
+    content:'Authenticating...',
+    duration: 5000,
+    dismissOnPageChange: true
+    }).present();
   }
 
   getHome(){
     //|| this.email == 'Inspector' && this.password == '123456in' || this.email == 'Driver' && this.password == '123456dr'
 
     let loginData = {
-      Email: this.email,
-      Password: this.password
+      email: this.email,
+      password: this.password
     };
 
-    if(this.email == 'User' && this.password == '123456us'){
+    if(this.email == 'u'){
+
 
       this.loadCtrl.create({
         duration: 5000,
         dismissOnPageChange: true
       }).present();
 
-      this.navCtrl.push(HomePage,loginData)
+      this.navCtrl.push(HomePage,loginData);
+
+
+      /*  this.authService.login(loginData).then((result) => {
+            
+            console.log(result);
+            this.navCtrl.setRoot(HomePage,loginData);
+        },(err) => {
+            this.showLoading();
+            console.log(err);
+        });*/
     }
     else if(this.email == 'Inspector' && this.password == '123456in'){
 
@@ -69,12 +86,18 @@ export class LoginPage {
       buttons: ['Ok'],
       cssClass: 'alertDanger'
     });
-    alert.present()
+    alert.present();
     }
   }
-  
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
 
+  /*ionViewDidLoad() {
+ 
+        this.authService.checkAuthentication().then((res) => {
+            console.log("Already authorized");
+            this.navCtrl.setRoot(HomePage);
+        }, (err) => {
+            console.log("Not already authorized");
+        });
+ 
+    }*/
 }
