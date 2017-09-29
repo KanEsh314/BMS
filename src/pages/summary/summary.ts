@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , ToastController} from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { AboutPage } from '../about/about';
 /**
  * Generated class for the SummaryPage page.
  *
@@ -25,7 +25,7 @@ export class SummaryPage {
       closeButtonText: 'Ok'
     }).present();
 
-  	this.navCtrl.push(HomePage);
+  	this.navCtrl.push(AboutPage);
   }
 
   getCancel(){

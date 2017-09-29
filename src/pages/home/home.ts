@@ -37,7 +37,7 @@ export class HomePage {
 
   Authentication(){
     //this.authService.logout();
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.push(LoginPage);
   }
 
   ionViewDidLoad(){

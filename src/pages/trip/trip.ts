@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ConfirmPage } from '../confirm/confirm';
-import * as moment from 'moment';
+//import * as moment from 'moment';
 /**
  * Generated class for the TripPage page.
  *
@@ -18,8 +18,7 @@ export class TripPage {
 
 route = '';
 busno = '';
-//timeStarts = new Date(Date.now()).toJSON();
-timeStarts = moment().format('LTS');
+timeStarts = new Date().toISOString();
 astart = '';
 aend = '';
 cstart = '';

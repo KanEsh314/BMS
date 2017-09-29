@@ -8,7 +8,7 @@ import { LoginPage } from '../login/login';
 })
 export class ContactPage {
 
-  Email = this.navParams.get('Email');
+  email = this.navParams.get('email');
 
   constructor(public navCtrl: NavController , public toastCtrl: ToastController , public navParams: NavParams) {
 
@@ -24,6 +24,6 @@ export class ContactPage {
   }
 
   Authentication(){
-    this.navCtrl.pop(LoginPage);
+    this.navCtrl.setRoot(LoginPage);
   }
 }

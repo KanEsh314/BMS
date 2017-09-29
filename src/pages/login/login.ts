@@ -18,11 +18,14 @@ import { ContactPage } from '../contact/contact'
 })
 export class LoginPage {
 
+  pageElement: any;
+  splash = true;
+
   email = '';
   password = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public loadCtrl: LoadingController, public authService: AuthProvider){
-    
+    this.pageElement = document.querySelector('.tabbar');
   }
 
   showLoading(){
@@ -100,4 +103,12 @@ export class LoginPage {
         });
  
     }*/
+
+    ionViewDidLoad() {
+      //this.pageElement.style.display = 'none';
+      setTimeout(() => {
+        this.splash = false;
+        //this.pageElement.style.display = 'flex';
+      },4000);
+    }
 }

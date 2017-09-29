@@ -20,7 +20,7 @@ export class AboutPage {
   }
 
   Authentication(){
-    this.navCtrl.pop(LoginPage);
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }
