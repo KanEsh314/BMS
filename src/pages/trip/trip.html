@@ -18,11 +18,7 @@
 				<ion-item>
       				<ion-label>ROUTE</ion-label>
       				<ion-select [(ngModel)]="route">
-        				<ion-option value="SBN - MLK">SBN - MLK</ion-option>
-        				<ion-option value="SBN - MUR">SBN - MUR</ion-option>
-        				<ion-option value="SBN - BP">SBN - BP</ion-option>
-        				<ion-option value="SBN - KLI2">SBN - KLI2</ion-option>
-        				<ion-option value="SBN - KUA">SBN - KUA</ion-option>
+        				<ion-option *ngFor="let route of routes" [value]="route.depart.station_name+' To '+route.destination.station_name">{{route.depart.station_name+" To "+route.destination.station_name}}</ion-option>
       				</ion-select>
     			</ion-item>
 		</ion-row>
@@ -33,17 +29,14 @@
 				<ion-item>
       				<ion-label>BUS NO</ion-label>
       				<ion-select [(ngModel)]="busno">
-        				<ion-option value="ABC 1234">ABC 1234</ion-option>
-        				<ion-option value="DEF 1234">DEF 1234</ion-option>
-        				<ion-option value="GHI 1234">GHI 1234</ion-option>
-        				<ion-option value="JKL 1234">JKL 1234</ion-option>
-        				<ion-option value="MNO 1234">MNO 1234</ion-option>
-        				<ion-option value="PQR 1234">PQR 1234</ion-option>
-      				</ion-select>
+                <div>
+        				<ion-option *ngFor="let busno of busnos" [value]="busno.registrationNumber">{{busno.registrationNumber}}</ion-option>
+      				  </div>
+              </ion-select>
     			</ion-item>
 		</ion-row>
     <ion-item-divider>
-    
+    <!--[(ngModel)]="timeStarts"-->
     </ion-item-divider>
 		<ion-row>
       <ion-item>

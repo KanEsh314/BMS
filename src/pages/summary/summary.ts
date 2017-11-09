@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams , ToastController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams , ToastController, AlertController} from 'ionic-angular';
 import { AboutPage } from '../about/about';
 /**
  * Generated class for the SummaryPage page.
@@ -15,17 +15,38 @@ import { AboutPage } from '../about/about';
 })
 export class SummaryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , 	public toastCtrl: ToastController) {
+  report = '';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams , 	public toastCtrl: ToastController, public alertCtrl: AlertController) {
   }
 
   getReport(){
-  	this.toastCtrl.create({
-      message: 'Your report were successfully submited',
-      showCloseButton: true,
-      closeButtonText: 'Ok'
-    }).present();
+    this.alertCtrl.create({
+      title: 'Are Sure To Send This Report?',
+      message: this.report,
+      buttons: [
+      {
+        text: 'Yes',
+        handler: () => {
 
-  	this.navCtrl.push(AboutPage);
+          //http post
+
+          this.toastCtrl.create({
+              message: 'Your report were successfully submited',
+              showCloseButton: true,
+              closeButtonText: 'Ok'
+             }).present();
+
+          this.navCtrl.push(AboutPage);
+        }
+      },
+      {
+        text: 'No',
+        handler: () => {
+          console.log('Agr')
+        }
+      }]
+    }).present();
   }
 
   getCancel(){
@@ -33,7 +54,14 @@ export class SummaryPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SummaryPage');
+    /*this.toastCtrl.create({
+      message: 'Your report were successfully submited',
+      showCloseButton: true,
+      closeButtonText: 'Ok'
+    }).present();
+
+    this.navCtrl.push(AboutPage);*/
+    
   }
 
 }

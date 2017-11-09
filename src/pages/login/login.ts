@@ -44,7 +44,7 @@ export class LoginPage {
       password: this.password
     };
 
-    if(this.email == 'u'){
+    if(this.email == 'u' && this.password == ''){
 
 
       this.loadCtrl.create({
@@ -64,7 +64,7 @@ export class LoginPage {
             console.log(err);
         });*/
     }
-    else if(this.email == 'Inspector' && this.password == '123456in'){
+    else if(this.email == 'i' && this.password == ''){
 
       this.loadCtrl.create({
         duration: 5000,
@@ -73,7 +73,7 @@ export class LoginPage {
 
       this.navCtrl.push(AboutPage,loginData);
     }
-    else if(this.email == 'Driver' && this.password == '123456dr'){
+    else if(this.email == 'd' && this.password == ''){
 
       this.loadCtrl.create({
         duration: 5000,

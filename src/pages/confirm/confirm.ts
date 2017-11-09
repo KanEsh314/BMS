@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { TripPage } from '../trip/trip';
 
 /**
  * Generated class for the ConfirmPage page.
@@ -30,7 +29,7 @@ export class ConfirmPage {
   }
 
   getEdit(){
-  	this.navCtrl.push(TripPage);
+  	this.navCtrl.pop();
   }
 
   getConfirm(){
@@ -44,7 +43,7 @@ export class ConfirmPage {
   }
 
   ionViewDidLoad() {
-    console.log();
+    
   }
 
 }

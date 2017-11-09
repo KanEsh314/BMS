@@ -12,7 +12,21 @@ import 'rxjs/add/operator/map';
 export class HttpProvider {
 
   constructor(public http: Http) {
-    console.log('Hello HttpProvider Provider');
+    //console.log('Hello HttpProvider Provider');
   }
 
+  getBus(){
+  	return this.http.get("https://afternoon-chamber-55365.herokuapp.com/api/buses")
+  	.map(res => res.json())
+  }
+
+  getStation(){
+  	return this.http.get("https://afternoon-chamber-55365.herokuapp.com/api/stations")
+  	.map(res => res.json())
+  }
+
+  getRoute(){
+    return this.http.get("https://afternoon-chamber-55365.herokuapp.com/api/routes")
+    .map(res => res.json())
+  }
 }

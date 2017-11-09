@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams , ViewController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams , ViewController, LoadingController} from 'ionic-angular';
+import { HttpProvider } from '../../providers/http/http';
 
 /**
  * Generated class for the StationPage page.
@@ -16,12 +17,30 @@ import { IonicPage, NavController, NavParams , ViewController} from 'ionic-angul
 export class StationPage {
 
   station = '';
+  stations : string[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public viewCtrl: ViewController) {
+  constructor(public loadingCtrl: LoadingController ,public httpServices: HttpProvider ,public navCtrl: NavController, public navParams: NavParams , public viewCtrl: ViewController) {
+  
   }
 
+
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StationPage');
+
+    let load = this.loadingCtrl.create({
+      content: "Please Wait",
+    });
+
+    load.present();
+
+    this.httpServices.getStation().subscribe(data => {
+      this.stations =  data;
+      console.log(this.stations);
+      load.dismiss();
+    }, (err) => {
+      console.log(err);
+      load.dismiss();
+    });
   }
 
   getConfirm(){

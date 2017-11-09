@@ -18,13 +18,8 @@
 		<ion-item>
       		<ion-label>Station</ion-label>
       			<ion-select [(ngModel)]="station">
-        			<ion-option value="Tampin">Tampin</ion-option>
-        			<ion-option value="Seremban">Seremban</ion-option>
-        			<ion-option value="Rembau">Rembau</ion-option>
-        			<ion-option value="Port Dickson">Port Dickson</ion-option>
-        			<ion-option value="Nilai">Nilai</ion-option>
-        			<ion-option value="Lukut">Lukut</ion-option>
-      			</ion-select>
+        			 <ion-option *ngFor="let station of stations" [value]="station.station_name">{{station.station_name}}</ion-option>
+            </ion-select>
     	</ion-item>
 	</ion-row>
 	<ion-row>
