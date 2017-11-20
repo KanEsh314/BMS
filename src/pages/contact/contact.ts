@@ -26,4 +26,20 @@ export class ContactPage {
   Authentication(){
     this.navCtrl.setRoot(LoginPage);
   }
+
+  getStart(){
+    this.toastCtrl.create({
+      message:'The Trip Started...',
+      duration: 1000
+    }).present();
+    //this.navCtrl.setRoot(LoginPage);
+  }
+
+  getEnd(){
+    this.toastCtrl.create({
+      message:'The Trip Ended...',
+      duration: 1000
+    }).present();
+    //this.navCtrl.setRoot(LoginPage);
+  }
 }

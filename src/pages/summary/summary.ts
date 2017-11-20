@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , ToastController, AlertController} from 'ionic-angular';
 import { AboutPage } from '../about/about';
+import { HttpProvider } from '../../providers/http/http';
+
 /**
  * Generated class for the SummaryPage page.
  *
@@ -17,7 +19,8 @@ export class SummaryPage {
 
   report = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , 	public toastCtrl: ToastController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams , 	public toastCtrl: ToastController, public alertCtrl: AlertController, public httpServices: HttpProvider) {
+  
   }
 
   getReport(){
@@ -29,15 +32,23 @@ export class SummaryPage {
         text: 'Yes',
         handler: () => {
 
-          //http post
+          let rData = {
+            trip_id: 1,
+            report: this.report
+          }
+
+          this.httpServices.createReport(rData).then(res => {
+            console.log(res);
+            this.navCtrl.push(AboutPage);
+          }, (err) => {
+            console.log(err);
+          });
 
           this.toastCtrl.create({
               message: 'Your report were successfully submited',
               showCloseButton: true,
               closeButtonText: 'Ok'
              }).present();
-
-          this.navCtrl.push(AboutPage);
         }
       },
       {

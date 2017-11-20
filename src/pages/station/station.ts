@@ -35,7 +35,6 @@ export class StationPage {
 
     this.httpServices.getStation().subscribe(data => {
       this.stations =  data;
-      console.log(this.stations);
       load.dismiss();
     }, (err) => {
       console.log(err);

@@ -17,12 +17,11 @@ import { HomePage } from '../home/home';
 export class ConfirmPage {
 
     Route = this.navParams.get('Route');
+    Driver = this.navParams.get('Driver');
     Bus = this.navParams.get('Bus');
     Time = this.navParams.get('Time');
-    AStart = this.navParams.get('AStart');
-    AEnd = this.navParams.get('AEnd');
-    CStart = this.navParams.get('CStart');
-    CEnd = this.navParams.get('CEnd');
+    Adult = this.navParams.get('Adult');
+    Child = this.navParams.get('Child');
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public toastCtrl: ToastController) {
 
