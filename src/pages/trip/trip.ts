@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
-import { ConfirmPage } from '../confirm/confirm';
+//import { ConfirmPage } from '../confirm/confirm';
 import { HttpProvider } from '../../providers/http/http';
 
 @IonicPage()
@@ -73,14 +73,30 @@ cend : any;
 
     console.log(cData);
 
-    this.httpServices.createTrip(cData).then(data => {
-      console.log(data);
-      //this.navCtrl.push(ConfirmPage);
-    }, (err) => {
-      console.log(err);
-    });
+      this.alertCtrl.create({
+      title: 'Are You Sure?',
+      buttons: [
+      {
+        text: 'Cancel',
+        handler: () => {
+          console.log('Clicked')
+        }
+      },
+      {
+        text: 'Save',
+        handler: () => {
+          this.httpServices.createTrip(cData).then(data => {
+            console.log(data);
+            this.navCtrl.pop();
+            //this.navCtrl.push(ConfirmPage);
+          }, (err) => {
+            console.log(err);
+          });
+        }
+      }]
+    }).present();
 
-    let confirmData = {
+    /*let confirmData = {
       Route: this.route,
       Driver: this.driver,
       Bus: this.busno,
@@ -88,10 +104,10 @@ cend : any;
       Adult: acount, 
       Child: ccount,
     }
-
+*/
     //console.log(confirmData)
 
-    this.navCtrl.push(ConfirmPage,confirmData);
+    //this.navCtrl.push(ConfirmPage,confirmData);
   }
 
   getCancel(){
