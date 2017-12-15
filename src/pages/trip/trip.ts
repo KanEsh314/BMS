@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 //import { ConfirmPage } from '../confirm/confirm';
 import { HttpProvider } from '../../providers/http/http';
+import { ConfirmPage } from '../confirm/confirm';
 
 @IonicPage()
 @Component({
@@ -60,54 +61,19 @@ cend : any;
 
     var acount = this.aend-this.astart;
     var ccount = this.cend-this.cstart;
-    var count  = acount + ccount;
 
     let cData = {
-      depart_time: this.timeStarts,
-      arrival_time: '2017-11-17T12:41:29.505Z',
-      passengerCount: count,
-      route_id: this.route,
-      driver_id: this.driver,
-      bus_id: this.busno
+      depart: this.timeStarts,
+      route: this.route,
+      driver: this.driver,
+      bus: this.busno,
+      adultc: acount,
+      childc: ccount
     }
 
     console.log(cData);
 
-      this.alertCtrl.create({
-      title: 'Are You Sure?',
-      buttons: [
-      {
-        text: 'Cancel',
-        handler: () => {
-          console.log('Clicked')
-        }
-      },
-      {
-        text: 'Save',
-        handler: () => {
-          this.httpServices.createTrip(cData).then(data => {
-            console.log(data);
-            this.navCtrl.pop();
-            //this.navCtrl.push(ConfirmPage);
-          }, (err) => {
-            console.log(err);
-          });
-        }
-      }]
-    }).present();
-
-    /*let confirmData = {
-      Route: this.route,
-      Driver: this.driver,
-      Bus: this.busno,
-      Time: this.timeStarts,
-      Adult: acount, 
-      Child: ccount,
-    }
-*/
-    //console.log(confirmData)
-
-    //this.navCtrl.push(ConfirmPage,confirmData);
+    this.navCtrl.push(ConfirmPage,cData);
   }
 
   getCancel(){

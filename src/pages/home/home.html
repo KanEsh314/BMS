@@ -20,13 +20,6 @@
       </div>
     </ion-list-header>
 
-    <ion-item (click)="setStation()">
-      <ion-avatar item-start>
-        <img src="assets/station.png">
-      </ion-avatar>
-        <h2>Set Station</h2>
-    </ion-item>
-
     <ion-item (click)="createTrip()">
       <ion-avatar item-start>
         <img src="assets/trip.png">
@@ -34,12 +27,25 @@
         <h2>Create Trip</h2>
     </ion-item>
 
+    <ion-item (click)="stopTrip()">
+      <ion-avatar item-start>
+        <img src="assets/stop.png">
+      </ion-avatar>
+        <h2>Stop Trip</h2>
+    </ion-item>
 
     <ion-item (click)="todayReport()">
       <ion-avatar item-start>
         <img src="assets/report.png">
       </ion-avatar>
         <h2>Today's Report</h2>
+    </ion-item>
+
+    <ion-item (click)="setStation()">
+      <ion-avatar item-start>
+        <img src="assets/station.png">
+      </ion-avatar>
+        <h2>Set Station</h2>
     </ion-item>
 
   </ion-list>

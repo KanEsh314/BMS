@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , ToastController } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { HttpProvider } from '../../providers/http/http';
 
 /**
  * Generated class for the ConfirmPage page.
@@ -16,14 +17,14 @@ import { HomePage } from '../home/home';
 })
 export class ConfirmPage {
 
-    Route = this.navParams.get('Route');
-    Driver = this.navParams.get('Driver');
-    Bus = this.navParams.get('Bus');
-    Time = this.navParams.get('Time');
-    Adult = this.navParams.get('Adult');
-    Child = this.navParams.get('Child');
+    Route = this.navParams.get('route');
+    Driver = this.navParams.get('driver');
+    Bus = this.navParams.get('bus');
+    Time = this.navParams.get('depart');
+    Adult = this.navParams.get('adultc');
+    Child = this.navParams.get('childc');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams , public toastCtrl: ToastController, public httpServices: HttpProvider) {
 
   }
 
@@ -32,13 +33,28 @@ export class ConfirmPage {
   }
 
   getConfirm(){
-    this.toastCtrl.create({
+
+    let confirmData = {
+      depart_time : this.Time,
+      bus_id: this.Bus,
+      driver_id: this.Driver,
+      route_id: this.Route,
+      adult_count: this.Adult,
+      children_count: this.Child
+    }
+
+    this.httpServices.createTrip(confirmData).then(data => {
+      console.log(data)
+      this.toastCtrl.create({
       message: 'Your files were successfully saved',
       showCloseButton: true,
       closeButtonText: 'Ok'
     }).present();
 
-  	this.navCtrl.push(HomePage);
+    this.navCtrl.push(HomePage);
+    }, (err) => {
+      console.log(err);
+    });   
   }
 
   ionViewDidLoad() {

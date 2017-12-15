@@ -5,6 +5,7 @@ import { TripPage } from '../trip/trip';
 import { ReportPage } from '../report/report';
 import { LoginPage } from '../login/login';
 import { AuthProvider } from '../../providers/auth/auth';
+import { StoptripPage } from '../stoptrip/stoptrip';
 
 @Component({
   selector: 'page-home',
@@ -29,6 +30,10 @@ export class HomePage {
 
   createTrip(){
   	this.navCtrl.push(TripPage);
+  }
+
+  stopTrip(){
+    this.navCtrl.push(StoptripPage)
   }
 
   todayReport(){

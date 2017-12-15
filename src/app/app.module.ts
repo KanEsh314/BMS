@@ -14,6 +14,7 @@ import { ConfirmPage } from '../pages/confirm/confirm';
 import { LogPage } from '../pages/log/log';
 import { SummaryPage } from '../pages/summary/summary';
 import { RegisterPage } from '../pages/register/register';
+import { StoptripPage } from '../pages/stoptrip/stoptrip'
 
 import { HttpModule } from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -35,7 +36,8 @@ import { IonicStorageModule } from '@ionic/storage';
     ConfirmPage,
     LogPage,
     SummaryPage,
-    RegisterPage
+    RegisterPage,
+    StoptripPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ import { IonicStorageModule } from '@ionic/storage';
     ConfirmPage,
     LogPage,
     SummaryPage,
-    RegisterPage
+    RegisterPage,
+    StoptripPage
   ],
   providers: [
     StatusBar,
