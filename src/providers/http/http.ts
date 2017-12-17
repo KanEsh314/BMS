@@ -70,7 +70,26 @@ export class HttpProvider {
 
         let data = res.json();
         resolve(data);
-        console.log(data)
+        //console.log(data);
+      }, (err) => {
+        reject(err);
+      });
+    });
+  }
+
+
+  stopTrip(sData, id){
+    return new Promise((resolve, reject) => {
+
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      this.http.post('https://afternoon-chamber-55365.herokuapp.com/api/trips/'+ id, JSON.stringify(sData), {headers: headers})
+      .subscribe(res => {
+
+        let data = res.json();
+        resolve(data);
+        //console.log(data)
       }, (err) => {
         reject(err);
       });

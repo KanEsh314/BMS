@@ -15,18 +15,11 @@
 
 <ion-content padding>
 
-    <ion-item>
-        <ion-label>BUS NO</ion-label>
-          <ion-select [(ngModel)]="route">
-            <ion-option value="bn1">ABC123r</ion-option>
-            <ion-option value="bn2">ABC456</ion-option>
-            <ion-option value="bn3">ABC789</ion-option>
-          </ion-select>
-  </ion-item>
+  <img src="../assets/tripstop.png">
 
   <ion-row>
       <ion-col>
-        <button ion-button color="but" (click)="getConfirm()" round full>Confirm</button>
+        <button ion-button color="but" (click)="getStop()" round full>Confirm</button>
       </ion-col>
     </ion-row>
 

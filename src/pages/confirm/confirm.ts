@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams , ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , ToastController, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { HttpProvider } from '../../providers/http/http';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the ConfirmPage page.
@@ -24,7 +25,7 @@ export class ConfirmPage {
     Adult = this.navParams.get('adultc');
     Child = this.navParams.get('childc');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public toastCtrl: ToastController, public httpServices: HttpProvider) {
+  constructor(public storage: Storage, public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams , public toastCtrl: ToastController, public httpServices: HttpProvider) {
 
   }
 
@@ -36,15 +37,16 @@ export class ConfirmPage {
 
     let confirmData = {
       depart_time : this.Time,
-      bus_id: this.Bus,
-      driver_id: this.Driver,
-      route_id: this.Route,
+      bus_id: this.Bus.id,
+      driver_id: this.Driver.id,
+      route_id: this.Route.id,
       adult_count: this.Adult,
       children_count: this.Child
     }
 
     this.httpServices.createTrip(confirmData).then(data => {
       console.log(data)
+      this.storage.set('data',data);
       this.toastCtrl.create({
       message: 'Your files were successfully saved',
       showCloseButton: true,
@@ -54,6 +56,11 @@ export class ConfirmPage {
     this.navCtrl.push(HomePage);
     }, (err) => {
       console.log(err);
+      this.alertCtrl.create({
+        title: 'Check Internet Connection',
+        subTitle: 'Please Connect The Device To Nearest Wifi',
+        buttons: ['OK']
+      }).present();
     });   
   }
 
