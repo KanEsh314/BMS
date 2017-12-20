@@ -16,24 +16,21 @@
 <ion-content class="cardReport">
 		
     <ion-item>
-      		<ion-label>ROUTE</ion-label>
-      			<ion-select [(ngModel)]="route">
-        			<ion-option value="r1">Alor Setar</ion-option>
-        			<ion-option value="r2">Bukit Kayu Hitam</ion-option>
-        			<ion-option value="r3">Butterworth</ion-option>
-        			<ion-option value="r4">Ipoh</ion-option>
-       				<ion-option value="r5">Kota Tinggi</ion-option>
-        			<ion-option value="r6">Kuala Lumpur</ion-option>
-      			</ion-select>
+        <ion-label>ROUTE</ion-label>
+        <ion-select [(ngModel)]="route" (click)="getTrip()">
+          <ion-option *ngFor="let route of routes" [value]="route.id">
+            {{route.depart.station_name+" To "+route.destination.station_name}}
+          </ion-option>
+        </ion-select>
     </ion-item>
 
-    <div class="cards">
+    <div class="cards" *ngIf="today">
       <ion-item color="item1" no-lines>
         <ion-avatar item-start>
           <img src="assets/card.png">
         </ion-avatar>
           <ion-label start>TRIP</ion-label>
-          <ion-label end>16</ion-label>
+          <ion-label end>{{today.tripCount}}</ion-label>
       </ion-item>
 
       <ion-item color="item2" no-lines>
@@ -41,7 +38,7 @@
           <img src="assets/card.png">
         </ion-avatar>
           <ion-label start>ADULT</ion-label>
-          <ion-label end>22</ion-label>
+          <ion-label end>{{today.adult_count}}</ion-label>
       </ion-item>
 
       <ion-item color="item3" no-lines>
@@ -49,7 +46,7 @@
           <img src="assets/card.png">
         </ion-avatar>
           <ion-label start>CHILD</ion-label>
-          <ion-label end>11</ion-label>
+          <ion-label end>{{today.children_count}}</ion-label>
       </ion-item>
 
       <ion-item color="item4" no-lines>

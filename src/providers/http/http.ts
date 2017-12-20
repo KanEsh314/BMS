@@ -40,6 +40,11 @@ export class HttpProvider {
     .map(res => res.json())
   }
 
+  getTodayTrip(id){
+    return this.http.get("https://afternoon-chamber-55365.herokuapp.com/api/todaytrip/"+id)
+    .map(res => res.json())
+  }
+
   createTrip(cData){
     return new Promise((resolve, reject) =>{
       

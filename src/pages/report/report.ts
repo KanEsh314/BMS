@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { HttpProvider } from '../../providers/http/http';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the ReportPage page.
@@ -15,11 +17,53 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ReportPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  route = '';
+  routes : string[];
+  today : '';
+  adultCount : '';
+  adultPrice : '';
+  childCount : '';
+  childPrice : '';
+
+  constructor(public storage: Storage, public navCtrl: NavController, public navParams: NavParams, public httpServices: HttpProvider, public loadingCtrl: LoadingController) {
+  
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ReportPage');
+     
+    let load = this.loadingCtrl.create({
+      content:'Please Wait'
+    });
+
+    load.present();
+
+    this.httpServices.getRoute().subscribe(data => {
+      this.routes = data;
+      load.dismiss();
+      console.log(this.childPrice);
+    }, (err) => {
+      console.log(err);
+    });
+
+  }
+
+  getTrip(){
+
+    let load = this.loadingCtrl.create({
+      content:'Please Wait'
+    });
+
+
+
+    this.httpServices.getTodayTrip(this.route).subscribe(data => {
+      load.present();
+      this.today = data;
+      load.dismiss();
+    }, (err) => {
+      console.log(err);
+    });
+
+
   }
 
   getBack(){
