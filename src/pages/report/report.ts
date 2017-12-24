@@ -20,10 +20,11 @@ export class ReportPage {
   route = '';
   routes : string[];
   today : '';
-  adultCount : '';
-  adultPrice : '';
-  childCount : '';
-  childPrice : '';
+  adultCount : any;
+  adultPrice : any;
+  childCount : any;
+  childPrice : any;
+  sales : any;
 
   constructor(public storage: Storage, public navCtrl: NavController, public navParams: NavParams, public httpServices: HttpProvider, public loadingCtrl: LoadingController) {
   
@@ -40,7 +41,6 @@ export class ReportPage {
     this.httpServices.getRoute().subscribe(data => {
       this.routes = data;
       load.dismiss();
-      console.log(this.childPrice);
     }, (err) => {
       console.log(err);
     });
@@ -49,20 +49,22 @@ export class ReportPage {
 
   getTrip(){
 
-    let load = this.loadingCtrl.create({
-      content:'Please Wait'
-    });
-
-
-
-    this.httpServices.getTodayTrip(this.route).subscribe(data => {
-      load.present();
-      this.today = data;
-      load.dismiss();
-    }, (err) => {
+    this.httpServices.getRouteById(this.route).subscribe(data => {
+      this.adultPrice = data.adult_price;
+      this.childPrice = data.children_price;
+    },(err) => {
       console.log(err);
     });
 
+    this.httpServices.getTodayTrip(this.route).subscribe(data => {
+      this.today = data;
+      this.adultCount = data.adult_count;
+      this.childCount = data.children_count;
+      this.sales = (this.adultCount*this.adultPrice) + (this.childCount*this.childPrice);
+      console.log(this.sales);
+    }, (err) => {
+      console.log(err);
+    });
 
   }
 

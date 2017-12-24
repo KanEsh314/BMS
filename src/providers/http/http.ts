@@ -45,6 +45,11 @@ export class HttpProvider {
     .map(res => res.json())
   }
 
+  getRouteById(id){
+    return this.http.get("https://afternoon-chamber-55365.herokuapp.com/api/routes/"+id)
+    .map(res => res.json())
+  }
+
   createTrip(cData){
     return new Promise((resolve, reject) =>{
       

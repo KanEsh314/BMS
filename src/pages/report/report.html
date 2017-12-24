@@ -17,7 +17,7 @@
 		
     <ion-item>
         <ion-label>ROUTE</ion-label>
-        <ion-select [(ngModel)]="route" (click)="getTrip()">
+        <ion-select [(ngModel)]="route" (ionChange)="getTrip()">
           <ion-option *ngFor="let route of routes" [value]="route.id">
             {{route.depart.station_name+" To "+route.destination.station_name}}
           </ion-option>
@@ -54,7 +54,7 @@
           <img src="assets/card.png">
         </ion-avatar>
           <ion-label start>SALES</ion-label>
-          <ion-label end>RM2,560</ion-label>
+          <ion-label end>RM{{sales}}</ion-label>
       </ion-item>
     </div>
 
